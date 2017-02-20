@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define GREEN "e[32m"
+#define GREEN "e[32m"// esto era porque quería ponerle color al texto
 #define WHITE "e[m"
 
 /* Esta es una aplicación para el calculo de incrementos mensuales de ingresos
