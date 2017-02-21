@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define GREEN "e[32m"// esto era porque quería ponerle color al texto
-#define WHITE "e[m"
-
 /* Esta es una aplicación para el calculo de incrementos mensuales de ingresos
    por medio de plazos fijos mensuales*/
+
+void consultar_saldo();//completa
+void despositar_saldo();//incompleta
+void retirar_saldo();//incompleta
+void capitalizar_mensual();//incompleta
+void asignar_tasa();
+
+
 
 int main(void)
 {
@@ -17,6 +22,7 @@ int main(void)
 	float monto = 0;
 	float mensual = 30./360;
 	int mes = 0;
+	int retiro = 0;
 
 	printf("\nBienvenido a Elu bank service\n");
 
@@ -34,8 +40,7 @@ int main(void)
 		if(opcion == 1)
 		{
 			system("clear");
-			printf("\nSu saldo actual es %f.\n\n", saldo);
-			opcion = 0;
+			consultar_saldo();
 		}
 		if(opcion == 2)
 		{
@@ -63,4 +68,20 @@ int main(void)
 			salir = 1;
 		}
 	}
+}
+
+void consultar_saldo()
+{
+	printf("\nSu saldo actual es %f.\n\n", saldo);
+	opcion = 0;
+}
+
+void retirar_saldo()
+{
+	printf("\nIngrese el monto que desea retirar:\n");
+	scanf("%f", &retiro);
+	saldo = saldo - retiro;
+	printf("Usted ha retirado %f con exito", retiro);
+	retiro = 0;
+	opcion = 0;
 }
